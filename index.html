@@ -4,7 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Saya</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset some basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+    }
+
+    header nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+    }
+
+    header nav ul li {
+      margin: 0 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      background: #6c5ce7;
+      color: white;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .biodata, .gallery, .video {
+      background: white;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+
+    .biodata p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,12 +117,12 @@
       </ul>
     </nav>
   </header>
-  
+
   <section class="hero">
-    <h1>Selamat Datang di Website Saya!</h1>
-    <p>Ini adalah website yang menarik dan keren.</p>
+    <h1>Selamat Datang di Website nabila!</h1>
+    <p>Ini adalah website saya yang menarik .</p>
   </section>
-  
+
   <footer>
     <p>&copy; 2026 Website Saya</p>
   </footer>
