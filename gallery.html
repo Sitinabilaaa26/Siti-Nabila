@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri</title>
+    <title>Galeri Saya</title>
 
     <style>
         * {
@@ -50,6 +50,7 @@
             margin-bottom: 20px;
         }
 
+        /* GALERI GRID */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -58,12 +59,14 @@
 
         .gallery img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .gallery img:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
         footer {
@@ -73,24 +76,31 @@
             padding: 10px;
             margin-top: 20px;
         }
+
+        /* RESPONSIVE TAMBAHAN */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 20px;
+            }
+        }
     </style>
 
 </head>
 <body>
 
 <header>
-    <h1>Gallery Saya</h1>
+    <h1>Galeri Foto</h1>
 </header>
 
 <nav>
     <a href="index.html">Home</a>
     <a href="biodata.html">Biodata</a>
-    <a href="gallery.html">gallery</a>
+    <a href="galeri.html">Galeri</a>
     <a href="video.html">Video</a>
 </nav>
 
 <div class="container">
-    <h2>Kumpulan Foto</h2>
+    <h2>Kumpulan Foto Saya</h2>
 
     <div class="gallery">
         <img src="1.jpg" alt="Foto 1">
