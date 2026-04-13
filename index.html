@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 1</title>
+    <title>Website Tugas</title>
 
     <style>
         * {
@@ -14,131 +14,76 @@
         }
 
         body {
-            background: linear-gradient(to right, #caf0f8, #ade8f4);
-        }
-
-        header {
-            background: #0077b6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background: #023e8a;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #90e0ef;
+            height: 100vh;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
-            padding: 30px;
             text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
 
         .card {
             background: white;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        img.profile {
-            width: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        /* GALERI */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-        }
-
-        .gallery img {
-            width: 100%;
-            border-radius: 10px;
+            color: #0077b6;
+            padding: 30px;
+            width: 200px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
 
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-
-        /* VIDEO */
-        video {
-            width: 70%;
-            border-radius: 10px;
+        .card:hover {
+            transform: translateY(-10px);
+            background: #caf0f8;
         }
 
         footer {
-            background: #0077b6;
+            position: absolute;
+            bottom: 10px;
             color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 
 </head>
 <body>
 
-<header>
-    <h1>Tugas 1</h1>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="tugas2.html">Tugas 2</a>
-</nav>
-
 <div class="container">
+    <h1>Website Tugas</h1>
 
-    <!-- BIODATA -->
-    <div class="card">
-        <h2>Biodata</h2>
-        <img src="nabila.jpeg" class="profile">
-        <p><b>Nama:</b> Siti Nabila</p>
-        <p><b>NIM:</b> 2310715220005</p>
-        <p><b>Jurusan:</b> Sosial Ekonomi Perikanan</p>
-        <p><b>Agama:</b> Islam</p>
-        <p><b>Gmail:</b> sitinabilaaa26@gmail.com</p>
-        <p><b>Alamat:</b>Sekumpul</p>
-        <p><b>Hobi:</b> Membaca</p>
+    <div class="menu">
+        <a href="tugas1.html" class="card">
+            Tugas 1
+        </a>
+
+        <a href="tugas2.html" class="card">
+            Tugas 2
+        </a>
     </div>
-
-    <!-- GALERI -->
-    <div class="card">
-        <h2>Galeri</h2>
-        <div class="gallery">
-            <img src="foto kanan atas.jpeg">
-            <img src="foto kanan bawah.jpeg">
-            <img src="kiri atas.jpeg">
-            <img src="kiri bawah.jpeg">
-        </div>
-    </div>
-
-    <!-- VIDEO -->
-    <div class="card">
-        <h2>Video</h2>
-        <video controls>
-            <source src="video rumah.mp4" type="video/mp4">
-        </video>
-    </div>
-
 </div>
 
 <footer>
