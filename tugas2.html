@@ -1,148 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 2 - Formulir</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form - Demografi</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            background: linear-gradient(to right, #caf0f8, #ade8f4);
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #023e8a;
-        }
-
-        form {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 700px;
-            margin: auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        h2 {
-            margin-top: 20px;
-            color: #0077b6;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .radio-group {
-            margin-top: 10px;
-        }
-
-        .radio-group input {
-            width: auto;
-            margin-right: 5px;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px;
-            width: 100%;
-            background: #0077b6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #023e8a;
-        }
-    </style>
+<style>
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg,#667eea,#764ba2);
+}
+.container {
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    max-width:500px;
+    margin:50px auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+h2 { text-align:center; }
+.step { text-align:center; margin-bottom:15px; color:#777; }
+label { display:block; margin-top:10px; font-weight:bold; }
+input, select, textarea {
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:8px;
+}
+button {
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Formulir Data Pengguna</h1>
+<div class="container">
+<div class="step">Step 1/3 - Demografi</div>
+<h2>Data Demografi</h2>
 
-<form>
+<label>Nama</label>
+<input type="text">
 
-    <!-- DATA DEMOGRAFI -->
-    <h2>Data Demografi</h2>
+<label>Tanggal Lahir</label>
+<input type="date">
 
-    <label>Nama</label>
-    <input type="text" placeholder="Masukkan nama">
+<label>Alamat</label>
+<textarea></textarea>
 
-    <label>Tanggal Lahir</label>
-    <input type="date">
+<label>No Telepon</label>
+<input type="tel">
 
-    <label>Alamat</label>
-    <textarea placeholder="Masukkan alamat"></textarea>
+<label>Email</label>
+<input type="email">
 
-    <label>No Telepon</label>
-    <input type="tel" placeholder="08xxxxxxxxxx">
+<label>Pendidikan</label>
+<select>
+<option>Pilih Pendidikan</option>
+<option>SMA</option>
+<option>D3</option>
+<option>S1</option>
+<option>S2</option>
+</select>
 
-    <label>Email</label>
-    <input type="email" placeholder="email@gmail.com">
-
-    <label>Pendidikan</label>
-    <select>
-        <option>Pilih Pendidikan</option>
-        <option>SMA</option>
-        <option>D3</option>
-        <option>S1</option>
-        <option>S2</option>
-    </select>
-
-    <!-- DATA BANK -->
-    <h2>Data Bank</h2>
-
-    <label>Nama Bank</label>
-    <select>
-        <option>Pilih Bank</option>
-        <option>BRI</option>
-        <option>BCA</option>
-        <option>Mandiri</option>
-        <option>BNI</option>
-        <option>DANA</option>
-    </select>
-
-    <label>Nomor Rekening</label>
-    <input type="number" placeholder="Masukkan nomor rekening">
-
-    <!-- DATA TRANSAKSI -->
-    <h2>Data Transaksi</h2>
-
-    <label>Tanggal Transaksi</label>
-    <input type="date">
-
-    <label>Uraian Transaksi</label>
-    <textarea placeholder="Contoh: Pembelian barang"></textarea>
-
-    <label>Jenis Transaksi</label>
-    <div class="radio-group">
-        <input type="radio" name="jenis"> Debit
-        <input type="radio" name="jenis"> Kredit
-    </div>
-
-    <label>Debit</label>
-    <input type="number">
-
-    <label>Kredit</label>
-    <input type="number">
-
-    <button type="submit">Kirim Data</button>
-
-</form>
+<button onclick="window.location.href='bank.html'">Selanjutnya →</button>
+</div>
 
 </body>
 </html>
