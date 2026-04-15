@@ -2,162 +2,226 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Formulir Data Demografi</title>
+<title>Formulir Data Lengkap</title>
+
 <style>
-    body {
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #6a11cb, #2575fc);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-    .form-container {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        width: 400px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+h2 {
+    text-align: center;
+}
 
-    .input-group {
-        margin-bottom: 15px;
-    }
+.input-group {
+    margin-bottom: 15px;
+}
 
-    label {
-        font-size: 14px;
-        display: block;
-        margin-bottom: 5px;
-    }
+label {
+    font-size: 14px;
+}
 
-    input, select {
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        outline: none;
-        transition: 0.3s;
-    }
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
 
-    input:focus, select:focus {
-        border-color: #2575fc;
-        box-shadow: 0 0 5px rgba(37,117,252,0.5);
-    }
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-    button {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        background: #2575fc;
-        color: white;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+.next { background: #4CAF50; color: white; width: 100%; }
+.back { background: #ccc; width: 48%; }
+.submit { background: #2196F3; color: white; width: 48%; }
 
-    button:hover {
-        background: #1a5ed8;
-    }
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
 
-    .step {
-        display: none;
-    }
+.step { display: none; }
+.step.active { display: block; }
 
-    .step.active {
-        display: block;
-    }
+/* Button jenis transaksi */
+.jenis-btn {
+    display: flex;
+    gap: 10px;
+}
 
+.jenis-btn button {
+    flex: 1;
+    background: #eee;
+}
+
+.jenis-btn button.active {
+    background: #4CAF50;
+    color: white;
+}
 </style>
+
 </head>
 <body>
 
-<div class="form-container">
-    <form id="multiStepForm">
+<div class="container">
+<form id="formMulti">
 
-        <!-- STEP 1 -->
-        <div class="step active">
-            <h2>Data Pribadi</h2>
+<!-- STEP 1 : DEMOGRAFI -->
+<div class="step active">
+    <h2>Data Demografi</h2>
 
-            <div class="input-group">
-                <label>Nama Lengkap</label>
-                <input type="text" required>
-            </div>
+    <div class="input-group">
+        <label>Nama Pengguna</label>
+        <input type="text" required>
+    </div>
 
-            <div class="input-group">
-                <label>Tanggal Lahir</label>
-                <input type="date" required>
-            </div>
+    <div class="input-group">
+        <label>Tanggal Lahir</label>
+        <input type="date" required>
+    </div>
 
-            <div class="input-group">
-                <label>Alamat</label>
-                <input type="text" required>
-            </div>
+    <div class="input-group">
+        <label>Alamat</label>
+        <input type="text" required>
+    </div>
 
-            <button type="button" onclick="nextStep()">Next ➜</button>
+    <div class="input-group">
+        <label>No Telepon</label>
+        <input type="tel" required>
+    </div>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" required>
+    </div>
+
+    <div class="input-group">
+        <label>Pendidikan</label>
+        <select required>
+            <option value="">Pilih Pendidikan</option>
+            <option>SD</option>
+            <option>SMP</option>
+            <option>SMA/SMK</option>
+            <option>D3</option>
+            <option>S1</option>
+            <option>S2</option>
+            <option>S3</option>
+        </select>
+    </div>
+
+    <button type="button" class="next" onclick="nextStep()">Next ➜</button>
+</div>
+
+<!-- STEP 2 : DATA BANK -->
+<div class="step">
+    <h2>Data Bank</h2>
+
+    <div class="input-group">
+        <label>Nama Bank</label>
+        <select required>
+            <option value="">Pilih Bank</option>
+            <option>BCA</option>
+            <option>BRI</option>
+            <option>BNI</option>
+            <option>Mandiri</option>
+            <option>CIMB Niaga</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Nomor Rekening</label>
+        <input type="number" required>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="back" onclick="prevStep()">⬅ Back</button>
+        <button type="button" class="next" onclick="nextStep()">Next ➜</button>
+    </div>
+</div>
+
+<!-- STEP 3 : TRANSAKSI -->
+<div class="step">
+    <h2>Data Transaksi</h2>
+
+    <div class="input-group">
+        <label>Tanggal Transaksi</label>
+        <input type="date" required>
+    </div>
+
+    <div class="input-group">
+        <label>Uraian Transaksi</label>
+        <input type="text" required>
+    </div>
+
+    <div class="input-group">
+        <label>Jenis Transaksi</label>
+        <div class="jenis-btn">
+            <button type="button" onclick="pilihJenis(this)">Debit</button>
+            <button type="button" onclick="pilihJenis(this)">Kredit</button>
         </div>
+    </div>
 
-        <!-- STEP 2 -->
-        <div class="step">
-            <h2>Kontak & Pendidikan</h2>
+    <div class="input-group">
+        <label>Debet</label>
+        <input type="number">
+    </div>
 
-            <div class="input-group">
-                <label>No Telepon</label>
-                <input type="tel" required>
-            </div>
+    <div class="input-group">
+        <label>Kredit</label>
+        <input type="number">
+    </div>
 
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" required>
-            </div>
+    <div class="btn-group">
+        <button type="button" class="back" onclick="prevStep()">⬅ Back</button>
+        <button type="submit" class="submit">Submit</button>
+    </div>
+</div>
 
-            <div class="input-group">
-                <label>Pendidikan</label>
-                <select required>
-                    <option value="">-- Pilih Pendidikan --</option>
-                    <option>SD</option>
-                    <option>SMP</option>
-                    <option>SMA/SMK</option>
-                    <option>Diploma</option>
-                    <option>S1</option>
-                    <option>S2</option>
-                    <option>S3</option>
-                </select>
-            </div>
-
-            <button type="button" onclick="prevStep()">⬅ Back</button>
-            <button type="submit">Submit</button>
-        </div>
-
-    </form>
+</form>
 </div>
 
 <script>
-let currentStep = 0;
+let step = 0;
 const steps = document.querySelectorAll(".step");
 
-function showStep(index) {
-    steps.forEach((step, i) => {
-        step.classList.remove("active");
-        if (i === index) step.classList.add("active");
-    });
+function showStep(n){
+    steps.forEach((s,i)=> s.classList.remove("active"));
+    steps[n].classList.add("active");
 }
 
-function nextStep() {
-    currentStep++;
-    showStep(currentStep);
+function nextStep(){
+    step++;
+    showStep(step);
 }
 
-function prevStep() {
-    currentStep--;
-    showStep(currentStep);
+function prevStep(){
+    step--;
+    showStep(step);
+}
+
+function pilihJenis(btn){
+    document.querySelectorAll(".jenis-btn button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
 }
 </script>
 
