@@ -2,75 +2,164 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form - Demografi</title>
-
+<title>Formulir Data Demografi</title>
 <style>
-body {
-    font-family: 'Segoe UI';
-    background: linear-gradient(135deg,#667eea,#764ba2);
-}
-.container {
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    max-width:500px;
-    margin:50px auto;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-h2 { text-align:center; }
-.step { text-align:center; margin-bottom:15px; color:#777; }
-label { display:block; margin-top:10px; font-weight:bold; }
-input, select, textarea {
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border-radius:8px;
-}
-button {
-    margin-top:20px;
-    width:100%;
-    padding:12px;
-    background:#667eea;
-    color:white;
-    border:none;
-    border-radius:10px;
-}
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        width: 400px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 5px rgba(37,117,252,0.5);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #2575fc;
+        color: white;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #1a5ed8;
+    }
+
+    .step {
+        display: none;
+    }
+
+    .step.active {
+        display: block;
+    }
+
 </style>
 </head>
-
 <body>
 
-<div class="container">
-<div class="step">Step 1/3 - Demografi</div>
-<h2>Data Demografi</h2>
+<div class="form-container">
+    <form id="multiStepForm">
 
-<label>Nama</label>
-<input type="text">
+        <!-- STEP 1 -->
+        <div class="step active">
+            <h2>Data Pribadi</h2>
 
-<label>Tanggal Lahir</label>
-<input type="date">
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input type="text" required>
+            </div>
 
-<label>Alamat</label>
-<textarea></textarea>
+            <div class="input-group">
+                <label>Tanggal Lahir</label>
+                <input type="date" required>
+            </div>
 
-<label>No Telepon</label>
-<input type="tel">
+            <div class="input-group">
+                <label>Alamat</label>
+                <input type="text" required>
+            </div>
 
-<label>Email</label>
-<input type="email">
+            <button type="button" onclick="nextStep()">Next ➜</button>
+        </div>
 
-<label>Pendidikan</label>
-<select>
-<option>Pilih Pendidikan</option>
-<option>SMA</option>
-<option>D3</option>
-<option>S1</option>
-<option>S2</option>
-</select>
+        <!-- STEP 2 -->
+        <div class="step">
+            <h2>Kontak & Pendidikan</h2>
 
-<button onclick="window.location.href='bank.html'">Selanjutnya →</button>
+            <div class="input-group">
+                <label>No Telepon</label>
+                <input type="tel" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Pendidikan</label>
+                <select required>
+                    <option value="">-- Pilih Pendidikan --</option>
+                    <option>SD</option>
+                    <option>SMP</option>
+                    <option>SMA/SMK</option>
+                    <option>Diploma</option>
+                    <option>S1</option>
+                    <option>S2</option>
+                    <option>S3</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="prevStep()">⬅ Back</button>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
 </div>
+
+<script>
+let currentStep = 0;
+const steps = document.querySelectorAll(".step");
+
+function showStep(index) {
+    steps.forEach((step, i) => {
+        step.classList.remove("active");
+        if (i === index) step.classList.add("active");
+    });
+}
+
+function nextStep() {
+    currentStep++;
+    showStep(currentStep);
+}
+
+function prevStep() {
+    currentStep--;
+    showStep(currentStep);
+}
+</script>
 
 </body>
 </html>
